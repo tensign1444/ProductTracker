@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.NetworkInformation;
 using System.Windows.Forms;
 
 namespace ProductTracker
@@ -9,6 +10,7 @@ namespace ProductTracker
         public PartTracker()
         {
             parts = new Parts("ITT");
+            
             InitializeComponent();          
         }
 
@@ -17,30 +19,24 @@ namespace ProductTracker
             this.Close();
         }
 
-
-
-
-
-
-        //__________________________________Helper Methods__________________________
-
-        private void Add()
+        /// <summary>
+        /// Delete menu bar click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void deletePartToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string partName = "";
-            string PartPrice = "";
-            string InStock = "";
-            string PartSku = "";
-            var popUp = new AddPopUp();
-            popUp.ShowDialog(this); // make sure this instance of Form1 is visible
+            Delete();
+        }
 
-            partName = popUp.PartName;
-            PartPrice = popUp.PartPrice;
-            InStock = popUp.InStock;
-            PartSku = popUp.PartSku;
-
-            parts.AddPart(partName, PartSku, PartPrice, InStock); 
-
-            dataTable.Rows.Add(partName, PartSku,InStock, PartPrice);
+        /// <summary>
+        /// Delete Button Click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            Delete();
         }
 
         /// <summary>
@@ -62,5 +58,43 @@ namespace ProductTracker
         {
             Add();
         }
+
+
+        //__________________________________Helper Methods__________________________
+
+        /// <summary>
+        /// Adds item to memory database and table
+        /// </summary>
+        private void Add()
+        {
+            string partName = "";
+            string PartPrice = "";
+            string InStock = "";
+            string PartSku = "";
+            var popUp = new AddPopUp();
+            popUp.ShowDialog(this); // make sure this instance of Form1 is visible
+
+            partName = popUp.PartName;
+            PartPrice = popUp.PartPrice;
+            InStock = popUp.InStock;
+            PartSku = popUp.PartSku;
+
+            parts.AddPart(partName, PartSku, PartPrice, InStock); 
+
+            dataTable.Rows.Add(partName, PartSku,InStock, PartPrice);
+        }
+
+        /// <summary>
+        /// Deletes selected items from data table
+        /// </summary>
+        private void Delete()
+        {
+            foreach (DataGridViewRow item in this.dataTable.SelectedRows)
+            {
+                dataTable.Rows.RemoveAt(item.Index);
+            }
+        }
+
+
     }
 }

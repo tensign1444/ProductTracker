@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PartTracker));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataTable = new System.Windows.Forms.DataGridView();
             this.PartName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,9 +41,18 @@
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
-            this.sortBox = new System.Windows.Forms.ComboBox();
-            this.sortLabel = new System.Windows.Forms.Label();
             this.addPartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.byTannerEnsignToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.version100ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deletePartsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.byTannerEnsignToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.version100ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.addPartToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.deletePartsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable)).BeginInit();
             this.SuspendLayout();
@@ -51,10 +60,9 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.helpToolStripMenuItem,
-            this.aboutToolStripMenuItem});
+            this.fileToolStripMenuItem1,
+            this.editToolStripMenuItem1,
+            this.aboutToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(541, 24);
@@ -78,17 +86,9 @@
             // 
             // editToolStripMenuItem
             // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addPartToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
@@ -138,7 +138,7 @@
             // 
             this.addButton.Location = new System.Drawing.Point(22, 39);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.Size = new System.Drawing.Size(94, 23);
             this.addButton.TabIndex = 2;
             this.addButton.Text = "Add Part";
             this.addButton.UseVisualStyleBackColor = true;
@@ -146,29 +146,12 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(103, 39);
+            this.deleteButton.Location = new System.Drawing.Point(423, 39);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.Size = new System.Drawing.Size(94, 23);
             this.deleteButton.TabIndex = 3;
-            this.deleteButton.Text = "Delete Part";
+            this.deleteButton.Text = "Delete Part(s)";
             this.deleteButton.UseVisualStyleBackColor = true;
-            // 
-            // sortBox
-            // 
-            this.sortBox.FormattingEnabled = true;
-            this.sortBox.Location = new System.Drawing.Point(442, 41);
-            this.sortBox.Name = "sortBox";
-            this.sortBox.Size = new System.Drawing.Size(75, 21);
-            this.sortBox.TabIndex = 4;
-            // 
-            // sortLabel
-            // 
-            this.sortLabel.AutoSize = true;
-            this.sortLabel.Location = new System.Drawing.Point(393, 44);
-            this.sortLabel.Name = "sortLabel";
-            this.sortLabel.Size = new System.Drawing.Size(43, 13);
-            this.sortLabel.TabIndex = 5;
-            this.sortLabel.Text = "Sort by:";
             // 
             // addPartToolStripMenuItem
             // 
@@ -177,20 +160,97 @@
             this.addPartToolStripMenuItem.Text = "Add Part";
             this.addPartToolStripMenuItem.Click += new System.EventHandler(this.addPartToolStripMenuItem_Click);
             // 
+            // byTannerEnsignToolStripMenuItem
+            // 
+            this.byTannerEnsignToolStripMenuItem.Name = "byTannerEnsignToolStripMenuItem";
+            this.byTannerEnsignToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.byTannerEnsignToolStripMenuItem.Text = "By Tanner Ensign";
+            // 
+            // version100ToolStripMenuItem
+            // 
+            this.version100ToolStripMenuItem.Name = "version100ToolStripMenuItem";
+            this.version100ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.version100ToolStripMenuItem.Text = "Version 1.0.0";
+            // 
+            // deletePartsToolStripMenuItem
+            // 
+            this.deletePartsToolStripMenuItem.Name = "deletePartsToolStripMenuItem";
+            this.deletePartsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deletePartsToolStripMenuItem.Text = "Delete Part(s)";
+            // 
+            // fileToolStripMenuItem1
+            // 
+            this.fileToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem1});
+            this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
+            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem1.Text = "File";
+            // 
+            // editToolStripMenuItem1
+            // 
+            this.editToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addPartToolStripMenuItem1,
+            this.deletePartsToolStripMenuItem1});
+            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem1.Text = "Edit";
+            // 
+            // aboutToolStripMenuItem1
+            // 
+            this.aboutToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.byTannerEnsignToolStripMenuItem1,
+            this.version100ToolStripMenuItem1});
+            this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem1.Text = "About";
+            // 
+            // byTannerEnsignToolStripMenuItem1
+            // 
+            this.byTannerEnsignToolStripMenuItem1.Name = "byTannerEnsignToolStripMenuItem1";
+            this.byTannerEnsignToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.byTannerEnsignToolStripMenuItem1.Text = "By Tanner Ensign";
+            // 
+            // version100ToolStripMenuItem1
+            // 
+            this.version100ToolStripMenuItem1.Name = "version100ToolStripMenuItem1";
+            this.version100ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.version100ToolStripMenuItem1.Text = "Version 1.0.0";
+            // 
+            // addPartToolStripMenuItem1
+            // 
+            this.addPartToolStripMenuItem1.Name = "addPartToolStripMenuItem1";
+            this.addPartToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.addPartToolStripMenuItem1.Text = "Add Part";
+            this.addPartToolStripMenuItem1.Click += new System.EventHandler(this.addPartToolStripMenuItem_Click);
+            // 
+            // deletePartsToolStripMenuItem1
+            // 
+            this.deletePartsToolStripMenuItem1.Name = "deletePartsToolStripMenuItem1";
+            this.deletePartsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.deletePartsToolStripMenuItem1.Text = "Delete Part(s)";
+            this.deletePartsToolStripMenuItem1.Click += new System.EventHandler(this.deletePartToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem1
+            // 
+            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem1.Text = "Exit";
+            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // PartTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(541, 450);
-            this.Controls.Add(this.sortLabel);
-            this.Controls.Add(this.sortBox);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.dataTable);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "PartTracker";
-            this.Text = "Form1";
+            this.Text = "Part Tracker";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable)).EndInit();
@@ -205,7 +265,6 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn PartName;
@@ -214,9 +273,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button deleteButton;
-        private System.Windows.Forms.ComboBox sortBox;
-        private System.Windows.Forms.Label sortLabel;
         private System.Windows.Forms.ToolStripMenuItem addPartToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem byTannerEnsignToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem version100ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deletePartsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem addPartToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem deletePartsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem byTannerEnsignToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem version100ToolStripMenuItem1;
     }
 }
 
